@@ -1,4 +1,5 @@
 from typing import Optional
+import traceback
 
 
 def add(a: int, b: int) -> int:
@@ -48,6 +49,6 @@ def main(a: int, b: int) -> Optional[int]:
         log_print("INFO", "Success")
     except RuntimeError as e:
         log_print("WARNING", f"RuntimeError info: {e.args[0]}")
-    except Exception as e:
-        log_print("ERROR", f"Exception info: {e.args[0]}")
+    except Exception:
+        log_print("ERROR", traceback.format_exc())
     return result
