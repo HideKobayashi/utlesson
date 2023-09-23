@@ -257,3 +257,5 @@ class TestMain(unittest.TestCase):
         self.assertEqual(args[0], expect_log_level)
         self.assertIn(expect_log_msg, args[1])
 ```
+
+さまざまな例外を切り替えて発生せることをモックを使わずに行おうとすると、add 関数が動作する条件を変更する必要がありますが、発生させるための条件を作るのが難しい場合にモックで置き換える方法は有効です。
